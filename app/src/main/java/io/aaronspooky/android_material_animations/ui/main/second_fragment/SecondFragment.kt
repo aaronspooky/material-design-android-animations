@@ -57,6 +57,7 @@ class SecondFragment : Fragment() {
         didTapAxisYButton()
         didTapAxisXButton()
         didTapAxisZButton()
+        didTapAnimationOnRow()
     }
 
     private fun didTapAxisYButton() {
@@ -83,6 +84,12 @@ class SecondFragment : Fragment() {
                 animationType = AnimationType.AXIS_Z.type
             )
             findNavController().navigate(action)
+        }
+    }
+
+    private fun didTapAnimationOnRow() {
+        binding.buttonRowAnimation.setOnClickListener {
+            findNavController().navigate(R.id.action_secondFragment_to_listFragment)
         }
     }
 }
