@@ -30,13 +30,13 @@
                 android:text="AXIS Y" />
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/button_axis_x"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="AXIS X" />
 
             <Button
-                android:id="@+id/button4"
+                android:id="@+id/button_axis_z"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="AXIS Z" />

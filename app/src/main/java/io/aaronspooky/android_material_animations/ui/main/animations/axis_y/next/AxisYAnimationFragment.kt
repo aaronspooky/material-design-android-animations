@@ -6,23 +6,24 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.navArgs
 import com.google.android.material.transition.MaterialContainerTransform
 import com.google.android.material.transition.MaterialSharedAxis
 import io.aaronspooky.android_material_animations.R
 import io.aaronspooky.android_material_animations.databinding.FragmentAxisYAnimationBinding
+import io.aaronspooky.android_material_animations.ui.main.second_fragment.AnimationType
 
 class AxisYAnimationFragment : Fragment() {
 
     private lateinit var binding: FragmentAxisYAnimationBinding
     private lateinit var viewModel: AxisYAnimationViewModel
+    private val args: AxisYAnimationFragmentArgs by navArgs()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val enterTransitionCustom = MaterialSharedAxis(MaterialSharedAxis.Y, true)
-        enterTransitionCustom.duration = 1000L
-        enterTransition = enterTransitionCustom
-        returnTransition = MaterialSharedAxis(MaterialSharedAxis.Y, false)
+        enterTransition = enterTransitionAnimation(AnimationType.fromInt(args.animationType))
+        returnTransition = returnTransitionAnimation(AnimationType.fromInt(args.animationType))
     }
 
     override fun onCreateView(
@@ -37,5 +38,30 @@ class AxisYAnimationFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(AxisYAnimationViewModel::class.java)
     }
+
+    /**
+     *
+     */
+    private fun enterTransitionAnimation(type: AnimationType): MaterialSharedAxis? {
+        val customAnimation = when (type) {
+            AnimationType.AXIS_Y -> MaterialSharedAxis(MaterialSharedAxis.Y, true)
+            AnimationType.AXIS_X -> MaterialSharedAxis(MaterialSharedAxis.X, true)
+            AnimationType.AXIS_Z -> MaterialSharedAxis(MaterialSharedAxis.Z, true)
+            AnimationType.UNKNOWN -> null
+        }
+        customAnimation?.duration = 1000L
+        return customAnimation
+    }
+
+    /**
+     *
+     */
+    private fun returnTransitionAnimation(type: AnimationType): MaterialSharedAxis? =
+        when(type) {
+            AnimationType.AXIS_Y -> MaterialSharedAxis(MaterialSharedAxis.Y, false)
+            AnimationType.AXIS_X -> MaterialSharedAxis(MaterialSharedAxis.X, false)
+            AnimationType.AXIS_Z -> MaterialSharedAxis(MaterialSharedAxis.Z, false)
+            AnimationType.UNKNOWN -> null
+        }
 
 }

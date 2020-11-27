@@ -10,6 +10,27 @@ import androidx.navigation.fragment.findNavController
 import com.google.android.material.transition.MaterialContainerTransform
 import io.aaronspooky.android_material_animations.R
 import io.aaronspooky.android_material_animations.databinding.FragmentSecondBinding
+import io.aaronspooky.android_material_animations.ui.main.animations.axis_y.AxisYFragmentDirections
+
+enum class AnimationType(val type: Int) {
+    AXIS_Y(1),
+    AXIS_X(2),
+    AXIS_Z(3),
+    UNKNOWN(-1);
+
+    /**
+     *
+     */
+    companion object {
+        fun fromInt(value: Int): AnimationType =
+            when(value) {
+                1 -> AXIS_Y
+                2 -> AXIS_X
+                3 -> AXIS_Z
+                else -> UNKNOWN
+            }
+    }
+}
 
 class SecondFragment : Fragment() {
 
@@ -34,11 +55,34 @@ class SecondFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(SecondViewModel::class.java)
         didTapAxisYButton()
+        didTapAxisXButton()
+        didTapAxisZButton()
     }
 
     private fun didTapAxisYButton() {
         binding.buttonAxisY.setOnClickListener {
-            findNavController().navigate(R.id.action_secondFragment_to_axisYFragment)
+            val action = SecondFragmentDirections.actionSecondFragmentToAxisYFragment(
+                animationType = AnimationType.AXIS_Y.type
+            )
+            findNavController().navigate(action)
+        }
+    }
+
+    private fun didTapAxisXButton() {
+        binding.buttonAxisX.setOnClickListener {
+            val action = SecondFragmentDirections.actionSecondFragmentToAxisYFragment(
+                animationType = AnimationType.AXIS_X.type
+            )
+            findNavController().navigate(action)
+        }
+    }
+
+    private fun didTapAxisZButton() {
+        binding.buttonAxisZ.setOnClickListener {
+            val action = SecondFragmentDirections.actionSecondFragmentToAxisYFragment(
+                animationType = AnimationType.AXIS_Z.type
+            )
+            findNavController().navigate(action)
         }
     }
 }
