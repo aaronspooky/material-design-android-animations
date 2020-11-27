@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.google.android.material.transition.MaterialContainerTransform
 import io.aaronspooky.android_material_animations.R
 import io.aaronspooky.android_material_animations.databinding.FragmentSecondBinding
@@ -32,5 +33,12 @@ class SecondFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(SecondViewModel::class.java)
+        didTapAxisYButton()
+    }
+
+    private fun didTapAxisYButton() {
+        binding.buttonAxisY.setOnClickListener {
+            findNavController().navigate(R.id.action_secondFragment_to_axisYFragment)
+        }
     }
 }

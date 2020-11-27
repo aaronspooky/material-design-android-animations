@@ -17,5 +17,22 @@
     <fragment
         android:id="@+id/secondFragment"
         android:name="io.aaronspooky.android_material_animations.ui.main.second_fragment.SecondFragment"
-        android:label="SecondFragment" />
+        android:label="SecondFragment" >
+        <action
+            android:id="@+id/action_secondFragment_to_axisYFragment"
+            app:destination="@id/axisYFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/axisYFragment"
+        android:name="io.aaronspooky.android_material_animations.ui.main.animations.axis_y.AxisYFragment"
+        android:label="AxisYFragment" >
+        <action
+            android:id="@+id/action_axisYFragment_to_axisYAnimationFragment"
+            app:destination="@id/axisYAnimationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/axisYAnimationFragment"
+        android:name="io.aaronspooky.android_material_animations.ui.main.animations.axis_y.next.AxisYAnimationFragment"
+        android:label="fragment_axis_y_animation"
+        tools:layout="@layout/fragment_axis_y_animation" />
 </navigation>
