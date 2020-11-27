@@ -8,6 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.transition.Hold
+import com.google.android.material.transition.MaterialElevationScale
 import io.aaronspooky.android_material_animations.R
 import io.aaronspooky.android_material_animations.databinding.MainFragmentBinding
 
@@ -15,6 +17,12 @@ class MainFragment : Fragment() {
 
     private lateinit var binding: MainFragmentBinding
     private lateinit var viewModel: MainViewModel
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        exitTransition = MaterialElevationScale(false)
+        reenterTransition = MaterialElevationScale(true)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
