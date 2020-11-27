@@ -19,10 +19,9 @@ class AxisYAnimationFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val containerTransform = MaterialContainerTransform()
-        containerTransform.duration = 2000L
-        sharedElementEnterTransition = containerTransform
-        enterTransition = MaterialSharedAxis(MaterialSharedAxis.Y,true)
+        val enterTransitionCustom = MaterialSharedAxis(MaterialSharedAxis.Y, true)
+        enterTransitionCustom.duration = 1000L
+        enterTransition = enterTransitionCustom
         returnTransition = MaterialSharedAxis(MaterialSharedAxis.Y, false)
     }
 
