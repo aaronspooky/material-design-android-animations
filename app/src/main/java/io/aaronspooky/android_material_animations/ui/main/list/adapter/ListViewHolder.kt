@@ -1,12 +1,9 @@
 package io.aaronspooky.android_material_animations.ui.main.list.adapter
 
-import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import androidx.transition.TransitionManager
-import com.google.android.material.transition.MaterialContainerTransform
 import io.aaronspooky.android_material_animations.databinding.ItemSimpleRowBinding
 
 class ListViewHolder(

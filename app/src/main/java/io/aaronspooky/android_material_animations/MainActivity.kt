@@ -1,8 +1,7 @@
 package io.aaronspooky.android_material_animations
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import io.aaronspooky.android_material_animations.ui.main.MainFragment
+import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
 
