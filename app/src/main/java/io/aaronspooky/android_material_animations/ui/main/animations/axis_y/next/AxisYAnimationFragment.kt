@@ -1,15 +1,13 @@
 package io.aaronspooky.android_material_animations.ui.main.animations.axis_y.next
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
-import com.google.android.material.transition.MaterialContainerTransform
 import com.google.android.material.transition.MaterialSharedAxis
-import io.aaronspooky.android_material_animations.R
 import io.aaronspooky.android_material_animations.databinding.FragmentAxisYAnimationBinding
 import io.aaronspooky.android_material_animations.ui.main.second_fragment.AnimationType
 
