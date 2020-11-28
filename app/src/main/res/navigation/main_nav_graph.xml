@@ -21,6 +21,9 @@
         <action
             android:id="@+id/action_secondFragment_to_axisYFragment"
             app:destination="@id/axisYFragment" />
+        <action
+            android:id="@+id/action_secondFragment_to_listFragment"
+            app:destination="@id/listFragment" />
     </fragment>
     <fragment
         android:id="@+id/axisYFragment"
@@ -42,4 +45,17 @@
             android:name="animationType"
             app:argType="integer" />
     </fragment>
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="io.aaronspooky.android_material_animations.ui.main.list.ListFragment"
+        android:label="ListFragment" >
+        <action
+            android:id="@+id/action_listFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="io.aaronspooky.android_material_animations.ui.main.list.detail.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" />
 </navigation>
