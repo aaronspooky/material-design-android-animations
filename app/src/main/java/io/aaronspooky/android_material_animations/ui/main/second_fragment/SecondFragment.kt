@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -57,6 +58,7 @@ class SecondFragment : Fragment() {
         didTapAxisXButton()
         didTapAxisZButton()
         didTapAnimationOnRow()
+        didTapCustomButton()
     }
 
     private fun didTapAxisYButton() {
@@ -89,6 +91,12 @@ class SecondFragment : Fragment() {
     private fun didTapAnimationOnRow() {
         binding.buttonRowAnimation.setOnClickListener {
             findNavController().navigate(R.id.action_secondFragment_to_listFragment)
+        }
+    }
+
+    private fun didTapCustomButton() {
+        binding.customAnimationButton.setOnClickListener {
+            findNavController().navigate(R.id.action_secondFragment_to_thirdFragment)
         }
     }
 }

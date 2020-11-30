@@ -45,6 +45,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Row animation" />
+
+            <Button
+                android:id="@+id/custom_animation_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Custom animation" />
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

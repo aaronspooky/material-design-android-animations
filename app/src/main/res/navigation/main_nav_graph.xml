@@ -24,6 +24,9 @@
         <action
             android:id="@+id/action_secondFragment_to_listFragment"
             app:destination="@id/listFragment" />
+        <action
+            android:id="@+id/action_secondFragment_to_thirdFragment"
+            app:destination="@id/thirdFragment" />
     </fragment>
     <fragment
         android:id="@+id/axisYFragment"
@@ -58,4 +61,14 @@
         android:name="io.aaronspooky.android_material_animations.ui.main.list.detail.DetailFragment"
         android:label="fragment_detail"
         tools:layout="@layout/fragment_detail" />
+    <fragment
+        android:id="@+id/thirdFragment"
+        android:name="io.aaronspooky.android_material_animations.ui.main.programatically_animation.ThirdFragment"
+        android:label="fragment_third"
+        tools:layout="@layout/fragment_third" />
+    <fragment
+        android:id="@+id/thirdAnimationFragment"
+        android:name="io.aaronspooky.android_material_animations.ui.main.programatically_animation.next.ThirdAnimationFragment"
+        android:label="fragment_third_animation"
+        tools:layout="@layout/fragment_third_animation" />
 </navigation>
